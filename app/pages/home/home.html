@@ -1,0 +1,18 @@
+<ActionBar title="Pdf-Viewer">  
+     <NavigationButton text="Geri" android.systemIcon="ic_menu_back" (tap)="geri()" ></NavigationButton>
+</ActionBar>
+<GridLayout rows="*">
+<!--<StackLayout row="0" [class.visible]="listLoaded" [class.hide]="!listLoaded">
+    <PDFView [src]="pdf_url" width="100%"></PDFView>
+</StackLayout>-->
+<ScrollView orientation="vertical" class="body" row="0" [class.visible]="!listLoaded" [class.hide]="listLoaded">
+<WrapLayout  class="small-spacing" orientation="horizontal">
+    <CardView elevation="40" shadowOffsetWidth="20" radius="10"  *ngFor="let item of list_dergi" width="150" height="210" (tap)="kitapsec(item)" class="select-item">
+        <GridLayout rows="150,60" verticalAlignment="center">
+            <Image  src="{{ item.pic_url }}" stretch="aspectFit"  row="0" ></Image>
+            <Label [text]="item.title" class="small-spacing" textWrap="true" row="1"></Label>
+        </GridLayout>
+    </CardView>      
+</WrapLayout>
+</ScrollView>
+</GridLayout>

@@ -1,0 +1,22 @@
+.small-spacing {
+  margin: 10;
+}
+.body{
+    background-color: #96a0bd;
+}
+.select-item{
+    margin:10;
+}
+.visible {
+  animation-name: show;
+  animation-duration: 3s;
+  height: 100%;
+}
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hide {
+  opacity: 0;
+  height: 0;
+}
